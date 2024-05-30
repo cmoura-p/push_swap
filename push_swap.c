@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/05/09 20:12:27 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:30:04 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,30 @@
         se estiver acima do meio fazer ra()
         se estiver abaixo do meio fazer rra()
 */
+
+#include "push_swap.h"
+
+int main(int argc, char **argv)
+{
+    t_stack_nodes   *a;
+    t_stack_nodes   *b;
+
+    a = NULL;
+    b = NULL;
+
+    if (argc == 1 || (argc == 2 && !argv[1][0]))
+        return (1);
+    else if (argc == 2)
+            argv = ft_split(argv[1], ' ');
+    init_stack(&a, *argv[1]);
+    if (!stack_ordered(a))
+    {
+        if (stack_len(a) == 2)
+            sa(&a, false);
+        else if(stack_len(a) == 3)
+        	quick_sort(&a, &b);
+        else
+            	push_swap(&a, &b);
+    }
+    free_stack(&a); // verificar o pq nao faco free direto
+}
