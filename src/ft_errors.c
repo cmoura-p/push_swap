@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 20:42:41 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/03 18:01:12 by cmoura-p         ###   ########.fr       */
+/*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
+/*   Updated: 2024/06/03 19:50:44 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+    criar aqui funcoes para lidar com erros
+*/
 
-size_t	ft_strlen(const char *str)
+#include "push_swap.h"
+
+bool    repeat_error(t_stack_node *a, int nbr)
 {
-	size_t	i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+}
+void    error_free(t_stack_node *a, char **argv)
+{
+
 }

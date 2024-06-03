@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   op_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 20:42:41 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/03 18:01:12 by cmoura-p         ###   ########.fr       */
+/*   Created: 2024/05/09 17:13:48 by cmoura-p          #+#    #+#             */
+/*   Updated: 2024/06/03 19:46:12 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+void	sa(t_stack_node **a, bool print);
+void	sb(t_stack_node **b, bool print);
+void	ss(t_stack_node **a, t_stack_node **b, bool print);

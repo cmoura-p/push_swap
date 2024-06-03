@@ -6,11 +6,11 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:09 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/05/22 19:50:04 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:03:35 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static size_t	ft_segm_count(char const *s, char c)
 {
@@ -79,4 +79,3 @@ char	**ft_split(char const *s, char c)
 	lista[j] = 0;
 	return (lista);
 }
-

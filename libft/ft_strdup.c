@@ -6,11 +6,11 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 20:41:05 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/05/22 20:47:35 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:01:06 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *str)
 {

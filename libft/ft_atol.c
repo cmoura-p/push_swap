@@ -6,17 +6,17 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 20:11:40 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/05/22 20:11:44 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:19:26 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_atol(const char *str)
 {
-	int	    sign;
+	int	sign;
 	long	num;
-
+	
 	sign = 1;
 	num = 0;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
