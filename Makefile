@@ -1,18 +1,33 @@
-# Standard
-NAME				= push_swap
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/07 16:49:36 by cmoura-p          #+#    #+#              #
+#    Updated: 2024/06/07 19:21:09 by cmoura-p         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# Directories
-LIBFT				= ./libft/libft.a
-SRC_DIR				= src/
-OBJ_DIR				= obj/
+# Iniciando
+NAME		= push_swap
 
-# Compiler and CFlags
-CC					= gcc
-CFLAG				= -Wall -Werror -Wextra -I
-RM					= rm -f
+# Compilacao e CFlags
+CC			= gcc
+CFLAG		= -Wall -Werror -Wextra
+RM			= rm -f
 
-# Source Files
-PUSH_SWAP_SRC		=	$(SRC_DIR)op_push.c \
+# Diretorios
+LIBFT		= ./libft/libft.a
+SRC_DIR		= src/
+OBJ_DIR		= obj/
+
+# Arquivos Fonte
+#LIBFT_SRC	= $(wildcard $(LIBFT_DIR)/*.c)
+
+SRCS				=	$(SRC_DIR)push_swap.c \
+						$(SRC_DIR)op_push.c \
 						$(SRC_DIR)op_rev_rotate.c \
 						$(SRC_DIR)op_rotate.c \
 						$(SRC_DIR)op_swap.c \
@@ -21,36 +36,36 @@ PUSH_SWAP_SRC		=	$(SRC_DIR)op_push.c \
 						$(SRC_DIR)quick_sort.c \
 						$(SRC_DIR)big_sort.c
 
+# Aplicando o padrao de substituicao de cada fonte me SRC e criando uma lista correspondente de objetos
+OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
+#LIBFT_OBJ			= $(patsubst $(LIBFT_SRC)%.c,$(OBJ_DIR)%.o,$(LIBFT_SRC))
 
-# Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
-OBJ 				= $(PUSH_SWAP_SRC:.c=(OBJ_DIR).o)
-
-# Build rules
+# Montando as regras
 start:
-					@make all
+	@make all
 
 $(LIBFT):
-					@make -C ./libft
+	@make -C ./libft
 
-all: 				$(NAME)
+all: 		$(NAME)
 
-$(NAME): 			$(OBJ) $(LIBFT)
-					@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
+$(NAME):	$(OBJ) $(LIBFT)
+			@$(CC) $(CFLAG) $(OBJ) $(LIBFT) -o $(NAME)
 
-# Compile object files from source files
-$(OBJ_DIR)%.o:		$(SRC_DIR)%.c
-					@mkdir -p $(@D)
-					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+# Criando os arquivos objeto a partir dos arquivos fonte
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c
+				@mkdir -p $(@D)
+				@$(CC) $(CFLAG) -c $< -o $@
 
 clean:
-					@$(RM) -r $(OBJ_DIR)
-					@make clean -C ./libft
+	@$(RM) -r $(OBJ_DIR)
+	@make clean -C ./libft
 
-fclean: 			clean
-					@$(RM) $(NAME)
-					@$(RM) $(LIBFT)
+fclean: 	clean
+			@$(RM) $(NAME)
+			@$(RM) $(LIBFT)
 
-re: 				fclean all
+re: 		fclean all
 
-# Phony targets represent actions not files
-.PHONY: 			start all clean fclean re
+# Phony representa acao nos arquivos
+.PHONY: 	start all clean fclean re
