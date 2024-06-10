@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/07 19:25:11 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/10 18:20:18 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,25 +53,7 @@
         se estiver acima do meio fazer ra()
         se estiver abaixo do meio fazer rra()
 */
-
-#include <stdbool.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include "../libft/libft.h"
-
-typedef struct s_stack_node
-{
-    int                 num;
-    int                 index;
-    int                 push_cost;
-    bool                on_first_half;
-    bool                cheapest;
-    struct s_stack_node *target_node;
-    struct s_stack_node *next;
-    struct s_stack_node *prev;
-}                       t_stack_node;
+#include "push_swap.h"
 
 void    stack_init(t_stack_node *a, char **argv)
 {
@@ -81,13 +63,11 @@ void    stack_init(t_stack_node *a, char **argv)
     while (*argv)
     {
         nbr = ft_atol(*argv);
-        /*
         if (nbr > INT_MAX || nbr < INT_MIN)
-            error_free(a, argv);
-        if (repeat_error(a, (int)nbr))
-            error_free(a, argv);
+            free_errors(a);
+        if (dup_error(a, (int)nbr))
+            free_errors(a);
         add_node(a, (int)nbr);
-        */
        ++argv;
     }
 }
@@ -105,16 +85,15 @@ int main(int argc, char **argv)
     if (argc == 2)
         argv = ft_split(argv[1], ' ');
     stack_init(a, argv);
-/*    if (!stack_ordered(a))
+    if (!stack_ordered(a))
     {
         if (stack_len(a) == 2)
             sa(&a, false);
         else if(stack_len(a) == 3)
-        	short_sort(&a, &b);
+        	short_sort(a, b);
         else
-            	push_swap(&a, &b);
+            big_sort(a, b);
     }
-    free_stack(&a);
-*/
+    stack_freed(&a);
     return(0);
 }

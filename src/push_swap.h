@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/07 17:33:21 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:22:18 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ typedef struct s_stack_node
 /*
     Handle errors
 */
-bool    repeat_error(t_stack_node *a, int nbr);
-void    error_free(t_stack_node *a, char **argv);
+int     syntax_error(char *str_n);
+int	    dup_error(t_stack_node *a, int n);
+void    free_errors(t_stack_node *a);
 
 /*
     Operations
@@ -58,13 +59,19 @@ void	pb(t_stack_node **b, t_stack_node **a, bool print);
 bool    stack_ordered(t_stack_node *a);
 int     stack_len(t_stack_node *a);
 void    stack_init(t_stack_node *a, char **argv);
-bool    add_node(t_stack_node *a, int nbr);
+void	stack_freed(t_stack_node **stack);
 
 /*
     Sorting functions
 */
 void    short_sort(t_stack_node *a, t_stack_node *b);
 void    big_sort(t_stack_node *a, t_stack_node *b);
+
+/*
+    Utils
+*/
+t_stack_node find_last(t_stack_node **a);
+bool    add_node(t_stack_node *a, int nbr);
 
 #endif
 

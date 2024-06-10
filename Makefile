@@ -6,7 +6,7 @@
 #    By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:49:36 by cmoura-p          #+#    #+#              #
-#    Updated: 2024/06/07 19:21:09 by cmoura-p         ###   ########.fr        #
+#    Updated: 2024/06/10 18:14:58 by cmoura-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ SRC_DIR		= src/
 OBJ_DIR		= obj/
 
 # Arquivos Fonte
-#LIBFT_SRC	= $(wildcard $(LIBFT_DIR)/*.c)
 
 SRCS				=	$(SRC_DIR)push_swap.c \
 						$(SRC_DIR)op_push.c \
@@ -38,7 +37,6 @@ SRCS				=	$(SRC_DIR)push_swap.c \
 
 # Aplicando o padrao de substituicao de cada fonte me SRC e criando uma lista correspondente de objetos
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
-#LIBFT_OBJ			= $(patsubst $(LIBFT_SRC)%.c,$(OBJ_DIR)%.o,$(LIBFT_SRC))
 
 # Montando as regras
 start:
@@ -63,7 +61,7 @@ clean:
 
 fclean: 	clean
 			@$(RM) $(NAME)
-			@$(RM) $(LIBFT)
+#			@$(RM) $(LIBFT)
 
 re: 		fclean all
 

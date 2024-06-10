@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   short_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 20:11:40 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/08 15:35:02 by cmoura-p         ###   ########.fr       */
+/*   Created: 2024/05/09 18:14:07 by cmoura-p          #+#    #+#             */
+/*   Updated: 2024/06/10 17:52:02 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atol(const char *str)
+void    short_sort(t_stack_node *a, t_stack_node *b)
 {
-	int	sign;
-	long	num;
-
-	sign = 1;
-	num = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		num = num * 10 + (*str - 48);
-		str++;
-	}
-	return (num * sign);
+    
 }
+
