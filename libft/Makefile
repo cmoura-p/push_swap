@@ -1,26 +1,18 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/05 19:42:04 by cmoura-p          #+#    #+#              #
-#    Updated: 2024/06/08 15:35:50 by cmoura-p         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
+# Standard
 NAME			= libft.a
 
-CC				= cc
+# Compiling and Flags
+CC				= gcc
 CFLAG			= -Wall -Wextra -Werror
-C_SOURCE 		= ft_atol.c ft_bzero.c ft_calloc.c ft_memcpy.c \
-				ft_memset.c ft_split.c ft_strdup.c ft_strlen.c ft_substr.c
+RM				= rm -f
+AR				= ar rcs
+
+# Source Files
+C_SOURCE = ft_atol.c ft_bzero.c ft_calloc.c ft_memset.c ft_split.c ft_strlen.c
+
 OBJ = $(C_SOURCE:.c=.o)
 
-RM				= rm -f
-AR				= ar rc
-
+# Build rules
 all: 		$(NAME)
 
 $(NAME): 	$(OBJ)
