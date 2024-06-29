@@ -6,15 +6,15 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:23 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/10 19:53:08 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/29 19:22:16 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_stack_node **dst, t_stack_node **src)
+static void	push(t_node **dst, t_node **src)
 {
-	t_stack_node	*push_node;
+	t_node	*push_node;
 
 	if (!*src)
 		return ;
@@ -28,7 +28,7 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 		*dst = push_node;
 		push_node->next = NULL;
 	}
-	else 
+	else
 	{
 		push_node->next = *dst;
 		push_node->next->prev = push_node;
@@ -36,14 +36,14 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 	}
 }
 
-void	pa(t_stack_node **a, t_stack_node **b, bool print) //Push on top of `b`, the top `a` and print the instruction
+void	pa(t_node **a, t_node **b, bool print)
 {
 	push(a, b);
 	if (!print)
 		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack_node **b, t_stack_node **a, bool print) //Push on top of `a`, the top `b` and print the instruction
+void	pb(t_node **b, t_node **a, bool print) 
 {
 	push(b, a);
 	if (!print)

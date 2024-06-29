@@ -6,46 +6,46 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:41 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/10 19:24:24 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/29 19:35:33 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack_node **a, bool print);
-void	rb(t_stack_node **b, bool print);
-void	rr(t_stack_node **a, t_stack_node **b, bool print);
+void	ra(t_node **a, bool print);
+void	rb(t_node **b, bool print);
+void	rr(t_node **a, t_node **b, bool print);
 
-static void	rotate(t_stack_node **stack) //Define a function that rotates the stack's top node to the bottom of the stack
+static void	rotate(t_node **stack)
 {
-	t_stack_node	*last_node; //To store a pointer to the last node of a stack
+	t_node	*last_node;
 
-	if (!*stack || !(*stack)->next) //Check if the stack is empty, or if there's one node
+	if (!*stack || !(*stack)->next)
 		return ;
-    t_stack_node	*last_node;
-	last_node = find_last(*stack);
-	last_node->next = *stack; //Assign to the last node, its `next` attribute as the top node, effectively setting the current top node as the last node
-	*stack = (*stack)->next; //Assign to the pointer of the top node, the node after it (second from the top)
-	(*stack)->prev = NULL; //Complete setting the current top node by detaching it from its previous top node
-	last_node->next->prev = last_node; //Reconnect the second node's prev pointer to point to what was previously the last node in the stack
-	last_node->next->next = NULL; //Assign to the `next` attribute of the current last node, `NULL` effectively setting it as the current last node, and properly null terminating the stack
+    t_node	*last_node;
+	*last_node = find_last(*stack);   //mais uma estrelinha
+	last_node->next = *stack;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	last_node->next->prev = last_node;
+	last_node->next->next = NULL;
 }
 
-void	ra(t_stack_node **a, bool print) //Rotate the top `a` node to the bottom of the stack, and print the instruction
+void	ra(t_node **a, bool print)
 {
 	rotate(a);
 	if (!print)
 		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack_node **b, bool print) //Rotate the top `b` node to the bottom of the stack, and print the instruction
+void	rb(t_node **b, bool print)
 {
 	rotate(b);
 	if (!print)
 		write(1, "rb\n", 3);
 }
 
-void	rr(t_stack_node **a, t_stack_node **b, bool print) //Stimultaneously rotate both the top `a` and `b` nodes to the bottom of the stack, and print the instruction
+void	rr(t_node **a, t_node **b, bool print)
 {
 	rotate(a);
 	rotate(b);

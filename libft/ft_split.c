@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:09 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/15 19:06:49 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/06/29 16:58:07 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int main(int argc, char **argv)
 {
     char **lista;
 
-	if (argc > 1)
+	if (argc == 2)
         lista = ft_split(argv[1], ' ');
 	return (0);
-}
+} 

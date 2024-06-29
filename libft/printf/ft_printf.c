@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   big_sort.c                                         :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 19:43:47 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/10 16:36:06 by cmoura-p         ###   ########.fr       */
+/*   Created: 2023/11/07 17:09:12 by cmoura-p          #+#    #+#             */
+/*   Updated: 2024/06/28 21:09:50 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../libft.h"
 
-void    big_sort(t_stack_node *a, t_stack_node *b)
+int	ft_printf(const char *format, ...)
 {
-    
+	va_list	ap;
+	int		i;
+
+	i = 0;
+	va_start(ap, format);
+	while (*format)
+	{
+		if (*format == '%')
+			i += ft_check_format(*(++format), ap);
+		else
+			i += write(1, format, 1);
+		++format;
+	}
+	va_end(ap);
+	return (i);
 }
