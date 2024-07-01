@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/29 19:39:04 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/07/01 19:42:15 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ static void check_input(int ac, char **av)
     i = 0;
     while (av[i])
     {
-        if (syntax_error(av))
+        if (syntax_error(*av))
         {
             if (ac == 2)
                 free_argv(av);
-            return(ft_printf("ERROR \n"));
+            ft_printf("ERROR \n");
+            return;
         }
         nbr = ft_atol(av[i]);
         if ((nbr > INT_MAX || nbr < INT_MIN)
@@ -33,7 +34,8 @@ static void check_input(int ac, char **av)
         {
             if (ac == 2)
                 free_argv(av);
-            return(ft_printf("ERROR \n"));
+            ft_printf("ERROR \n");
+            return;
         }
         i++;
     }
@@ -47,10 +49,13 @@ void    stack_init(t_node **a, char **argv)
 
     while (*argv)
     {
-        nbr = ft_atol(argv);
-        new_node = (t_node **) malloc(sizeof(t_node));
+        nbr = ft_atol(*argv);
+        new_node = (t_node *) malloc(sizeof(t_node));
         if (!new_node)
-            return (ft_printf("Malloc error \n"));
+        {
+            ft_printf("Malloc error \n");
+            return;
+        }
         new_node->num = (int)nbr;
         new_node->next = NULL;
         if (!a)
@@ -78,11 +83,14 @@ int main(int argc, char **argv)
     if (argc == 1)
         return (0);
     if (argc == 2 && !argv[1][0])
-        return(ft_printf("ERROR \n"));
+    {
+        ft_printf("ERROR \n");
+        return(0);
+    }
     if (argc == 2)
         argv = ft_split(argv[1], ' ');
     else
-        argv + 1;
+        argv = argv + 1;
     check_input(argc, argv);
     stack_init(&stack_a, argv);
 
