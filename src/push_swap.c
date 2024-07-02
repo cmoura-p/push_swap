@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/07/01 19:42:15 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/07/02 18:07:25 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void check_input(int ac, char **av)
     i = 0;
     while (av[i])
     {
-        if (syntax_error(*av))
+        if (syntax_error(av[i]))
         {
             if (ac == 2)
                 free_argv(av);
@@ -30,7 +30,7 @@ static void check_input(int ac, char **av)
         }
         nbr = ft_atol(av[i]);
         if ((nbr > INT_MAX || nbr < INT_MIN)
-            || (dup_error(av, nbr, i)))
+            || (dupli_error(av, nbr, i)))
         {
             if (ac == 2)
                 free_argv(av);
@@ -41,7 +41,7 @@ static void check_input(int ac, char **av)
     }
 }
 
-void    stack_init(t_node **a, char **argv)
+/* void    stack_init(t_node **a, char **argv)
 {
     long    nbr;
     t_node *aux;
@@ -71,15 +71,15 @@ void    stack_init(t_node **a, char **argv)
         ++argv;
     }
 }
-
+ */
 int main(int argc, char **argv)
 {
-    t_node   *stack_a;
+/*     t_node   *stack_a;
     t_node   *stack_b;
 
     stack_a = NULL;
     stack_b = NULL;
-
+ */
     if (argc == 1)
         return (0);
     if (argc == 2 && !argv[1][0])
@@ -92,7 +92,7 @@ int main(int argc, char **argv)
     else
         argv = argv + 1;
     check_input(argc, argv);
-    stack_init(&stack_a, argv);
+    /* stack_init(&stack_a, argv);
 
     if (!stack_ordered(stack_a))
     {
@@ -104,7 +104,7 @@ int main(int argc, char **argv)
             real_sort(stack_a, stack_b);
     }
     stack_freed(&stack_a);
-
+ */
     return(0);
 }
 

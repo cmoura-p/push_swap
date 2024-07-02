@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:09 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/07/01 18:42:35 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/07/02 17:57:40 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	**ft_split(char const *s, char c)
 	return (lista);
 }
 #include <stdio.h>
-
+/*
 int main(int argc, char **argv)
 {
     char **lista;
@@ -111,3 +111,4 @@ int main(int argc, char **argv)
 //        printf("%s \n", lista[0]);
 	return (0);
 }
+*/

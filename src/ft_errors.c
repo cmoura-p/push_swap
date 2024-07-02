@@ -6,24 +6,24 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/29 19:36:17 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/07/02 17:52:52 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	syntax_error(char *str)
+int	syntax_error(char *str)
 {
 	if (!(*str == '+' || *str == '-'
 		|| (*str >= '0' && *str <= '9')))
-		return (0);
+		return (1);
 	if ((*str == '+' || *str == '-')
 		&& !(str[1] >= '0' && str[1] <= '9'))
-        return (0);
-	return (1);
+        return (1);
+	return (0);
 }
 
-bool	dup_error(char **nbrs, int n, int pos)
+int	dupli_error(char **nbrs, int n, int pos)
 {
     int i = 0;
 

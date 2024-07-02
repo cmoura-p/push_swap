@@ -6,7 +6,7 @@
 #    By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:49:36 by cmoura-p          #+#    #+#              #
-#    Updated: 2024/06/29 19:40:44 by cmoura-p         ###   ########.fr        #
+#    Updated: 2024/07/02 18:08:49 by cmoura-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,16 +26,15 @@ OBJ_DIR		= obj/
 # Codigos Fonte
 
 SRCS				=	$(SRC_DIR)push_swap.c \
-						$(SRC_DIR)op_push.c \
-						$(SRC_DIR)op_rev_rotate.c \
-						$(SRC_DIR)op_rotate.c \
-						$(SRC_DIR)op_swap.c \
-						$(SRC_DIR)ft_stack.c \
 						$(SRC_DIR)ft_errors.c \
-						$(SRC_DIR)ft_utils.c \
-						$(SRC_DIR)short_sort.c \
-						$(SRC_DIR)real_sort.c
-
+#						$(SRC_DIR)ft_stack.c \
+#						$(SRC_DIR)ft_utils.c \
+#						$(SRC_DIR)short_sort.c \
+#						$(SRC_DIR)real_sort.c\
+#						$(SRC_DIR)op_push.c \
+#						$(SRC_DIR)op_rev_rotate.c \
+#						$(SRC_DIR)op_rotate.c \
+#						$(SRC_DIR)op_swap.c
 
 # Substituicao padrao de cada fonte encontrado em $(SRCS) criando objetos correspondentes
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
