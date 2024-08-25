@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/07/02 18:07:09 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/24 15:58:07 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef struct s_stack_node
 {
     int                 num;
-//    int                 index;
+    int                 index;
 //    int                 cost;
 //    bool                first_half;
 //    bool                cheapest;

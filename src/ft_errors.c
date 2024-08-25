@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/07/02 17:52:52 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/24 17:57:43 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	free_argv(char **a)
 		free(a[i]);
 		i++;
 	}
-	free(a); // tenho que colocar exit?
+	free(a);
 }
 
 

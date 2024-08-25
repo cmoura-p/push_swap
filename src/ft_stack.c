@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:34:54 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/29 19:36:42 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/24 18:07:09 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 int     stack_len(t_node *a)
 {
+    int i;
 
+    i = 1;
+    while(a->next != NULL)
+    {
+        i++;
+        a = a->next;
+    }
+    return (i);
 }
 
 bool    stack_ordered(t_node *a)
