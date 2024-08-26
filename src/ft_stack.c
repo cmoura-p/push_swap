@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:34:54 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/24 18:07:09 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/26 19:14:23 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,16 @@ int     stack_len(t_node *a)
 
 bool    stack_ordered(t_node *a)
 {
-    return(0);
+    t_node  *temp;
+
+    temp = a;
+    while (temp->next != NULL)
+    {
+        if (temp->num > temp->next->num)
+            return(0);
+        temp = temp->next;
+    }
+    return(1);
 }
 void	stack_freed(t_node **stack)
 {
