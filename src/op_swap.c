@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:48 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/29 19:21:21 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/28 20:28:04 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void	ss(t_node **a, t_node **b, bool print);
 
 static void	swap(t_node **head)
 {
-	if (!*head || !(*head)->next)
+    int len;
+
+    len = stack_len(*head);
+    if (len == 1 || *head == NULL || (*head)->next == NULL)
 		return ;
 	*head = (*head)->next;
 	(*head)->prev->prev = *head;
@@ -43,7 +46,7 @@ void	sb(t_node **b, bool print)
 		write(1, "sb\n", 3);
 }
 
-void	ss(t_node **a, t_node **b, bool print) 
+void	ss(t_node **a, t_node **b, bool print)
 {
 	swap(a);
 	swap(b);

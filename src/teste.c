@@ -2,10 +2,10 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	int	sign;
-	long	num;
+    long	num;
 
 	sign = 1;
 	num = 0;
@@ -17,7 +17,7 @@ int	ft_atol(const char *str)
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		num = num * 10 + (*str - 48);
+        num = num * 10 + (*str - 48);
 		str++;
 	}
 	return (num * sign);
@@ -28,7 +28,7 @@ int main(int ac, char **av)
     int i;
 
     nbr = 0;
-    i = 0;
+    i = 1;
     while (av[i])
     {
         nbr = ft_atol(av[i]);

@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/26 20:24:35 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/28 21:13:17 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,30 @@ static bool check_input(int ac, char **av);
 
 int main(int argc, char **argv)
 {
-    // Declarar 2 ponteiros de t_node para a pilha A e pilha B
-    // E inicializar com NULL para evitar comportamento inesperado
     t_node   *stack_a;
     //t_node   *stack_b;
 
     stack_a = NULL;
     //stack_b = NULL;
 
-    // Entao vamos lidar com erros de input
-    // AC tem que ser maior ou igual a 2 e AV nao pode ser vazio
+    // verificacao de erros de input
     if (argc == 1)
         return (0);
-    if (argc == 2 && !argv[1][0])
+    if (argc == 2 && (!argv[1][0] || argv[1][0] == 32))
     {
-        ft_printf("ARGUMENT ERROR \n");
+        write(2, "ERROR\n", 6);
         return(0);
     }
-
-    // Se AV for um unico argumento, ou seja, uma string,
-    // tem que chamar o split
     if (argc == 2)
         argv = ft_split(argv[1], ' ');
     else
         argv = argv + 1;
 
-    // Verificamos erros nos valores inputados
-    // So pode haver numeros ou '-' ou '+'
-    // o numero nao pode ser maior que o INT_MAX
-    // nem menor que o INT_MIN (#include <limits.h>)
-    // tambem nao pode haver duplicados
     if (!check_input(argc, argv)) // ta' funcionando
         return(0);
 
-    // DUVIDA GIGANTE!!!
-    // O QUE ACONTE COM O RETURN DO CHECK_INPUT QUANDO HA ERRO???
-    // (PERGUNTEI AO GPT E ELE CONFIRMOU QUE EXECUTA A STACK_INIT DE QQ MANEIRA)
     // Vamos inicializar a stack A
     stack_init(&stack_a, argv);
-
 
     if (!stack_ordered(stack_a))
     {
@@ -95,7 +80,7 @@ static bool check_input(int ac, char **av)
         {
             if (ac == 2)
                 free_argv(av);
-            ft_printf("SYNTAX ERROR \n");
+            write(2, "ERROR\n", 6);
             return(false);
         }
         nbr = ft_atol(av[i]);
@@ -104,7 +89,7 @@ static bool check_input(int ac, char **av)
         {
             if (ac == 2)
                 free_argv(av);
-            ft_printf("DUPLICITY ERROR \n");
+            write(2, "ERROR\n", 6);
             return(false);
         }
         i++;

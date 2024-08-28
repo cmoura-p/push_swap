@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:09 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/07/02 17:57:40 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/28 19:34:12 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,9 @@ char	**ft_split(char const *s, char c)
 	char		**lista;
 	size_t		i;
 	size_t		j;
+
+    if (s == NULL)
+        return(NULL);
 
 	lista = (char **) ft_calloc((ft_segm_count(s, c) + 1), sizeof(char *));
 	if (!lista || !s)

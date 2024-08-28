@@ -6,13 +6,13 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 20:11:40 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/08 15:35:02 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:28:00 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	int	sign;
 	long	num;

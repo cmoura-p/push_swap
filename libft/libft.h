@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:04:20 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/28 20:17:01 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:28:18 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define HEXL   "0123456789abcdef"
 # define HEXU   "0123456789ABCDEF"
 
-int		ft_atol(const char *s);
+long	ft_atol(const char *s);
 void	ft_bzero(void *buff, size_t n);
 void	*ft_calloc(size_t n, size_t size);
 void	*ft_memset(void *ptr, int value, size_t num);
