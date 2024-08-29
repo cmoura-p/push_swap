@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:04:20 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/28 17:28:18 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:24:34 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ long	ft_atol(const char *s);
 void	ft_bzero(void *buff, size_t n);
 void	*ft_calloc(size_t n, size_t size);
 void	*ft_memset(void *ptr, int value, size_t num);
-char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 
 // printf

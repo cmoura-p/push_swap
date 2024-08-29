@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/28 21:13:17 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/29 21:28:09 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,23 @@ int main(int argc, char **argv)
     stack_a = NULL;
     //stack_b = NULL;
 
-    // verificacao de erros de input
-    if (argc == 1)
+    if ((argc == 1) || (argc == 2 && (!argv[1][0])))
         return (0);
-    if (argc == 2 && (!argv[1][0] || argv[1][0] == 32))
-    {
-        write(2, "ERROR\n", 6);
-        return(0);
-    }
+
     if (argc == 2)
         argv = ft_split(argv[1], ' ');
     else
-        argv = argv + 1;
-
-    if (!check_input(argc, argv)) // ta' funcionando
+        argv = argv+1;
+    if (!argv[0])
+    {
+        write(2, "ERROR\n", 6);
+        if (argc == 2)
+            free_argv(argv);
+        return(0);
+    }
+    if (!check_input(argc, argv))
         return(0);
 
-    // Vamos inicializar a stack A
     stack_init(&stack_a, argv);
 
     if (!stack_ordered(stack_a))
@@ -53,8 +53,8 @@ int main(int argc, char **argv)
             //real_sort(stack_a, stack_b);    // tem mais de tres nos parte pro algoritmo
             printf("Tem mais de 3 \n");
     }
-
-    // Por fim de tudo faz free da stack que foi posta em memoria
+    if (argc == 2)
+        free_argv(argv);
     stack_freed(&stack_a);
 
     return(0);
@@ -62,13 +62,6 @@ int main(int argc, char **argv)
 
 static bool check_input(int ac, char **av)
 {
-    // muito importante lembrar, caso haja erro e fez split,
-    // fazer free da pilha
-    // Aqui chamamos outras funcoes:
-    //      * ft_atol (long numbers)
-    //      * ft_printf
-    //      * free_argv
-    //      * dupli_error
     long nbr;
     int i;
 
@@ -108,10 +101,7 @@ void    stack_init(t_node **a, char **argv)
         nbr = ft_atol(*argv);
         new_node = (t_node *) malloc(sizeof(t_node));
         if (!new_node)
-        {
-            ft_printf("Malloc error \n");
             return;
-        }
         new_node->num = (int)nbr;
         new_node->next = NULL;
         if (!*a)

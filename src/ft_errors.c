@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/26 18:54:12 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/29 20:04:36 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	syntax_error(char *str) // ta' funcionando
 	return (0);
 }
 
-int	dupli_error(char **nbrs, int n, int pos) // ta' funcionando
+int	dupli_error(char **nbrs, int n, int pos)
 {
     int i = 0;
 

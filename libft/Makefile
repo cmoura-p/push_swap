@@ -8,7 +8,7 @@ RM				= rm -f
 AR				= ar rcs
 
 # Source Files
-C_SOURCE = 	ft_atol.c ft_bzero.c ft_calloc.c ft_memset.c ft_split.c ft_strlen.c \
+C_SOURCE = 	ft_atol.c ft_bzero.c ft_calloc.c ft_memset.c ft_strlen.c \
 
 PF_SOURCE = $(wildcard ./printf/*.c)
 

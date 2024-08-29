@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/26 17:49:34 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:24:57 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 typedef struct s_stack_node
 {
     int                 num;
-    int                 index;
+    int                 pos;
 //    int                 cost;
+//    int                 final_index: (eh uma opcao do oceano)
 //    bool                first_half;
 //    bool                cheapest;
     struct s_stack_node *next;
@@ -72,6 +73,7 @@ void	stack_freed(t_node **stack);
 /*
     Utils
 */
+char	**ft_split(char const *s, char c);
 // t_node  find_last(t_node **a);
 // bool    add_node(t_node *a, int nbr);
 

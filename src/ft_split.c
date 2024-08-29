@@ -6,11 +6,11 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:09 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/28 19:34:12 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/29 20:03:20 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 static size_t ft_segm_count(char const *s, char c)
 {
@@ -69,16 +69,14 @@ static char *ft_get_segm(const char *s, char c, size_t j)
 	}
 	return(substr);
 }
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char		**lista;
 	size_t		i;
 	size_t		j;
-
     if (s == NULL)
         return(NULL);
-
-	lista = (char **) ft_calloc((ft_segm_count(s, c) + 1), sizeof(char *));
+    lista = (char **) ft_calloc((ft_segm_count(s, c) + 1), sizeof(char *));
 	if (!lista || !s)
 		return (NULL);
 	i = 0;
@@ -102,16 +100,4 @@ char	**ft_split(char const *s, char c)
 	lista[j] = 0;
 	return (lista);
 }
-#include <stdio.h>
-/*
-int main(int argc, char **argv)
-{
-    char **lista;
 
-	if (argc == 2)
-        lista = ft_split(argv[1], ' ');
-//        printf("%s \n", argv[0]);
-//        printf("%s \n", lista[0]);
-	return (0);
-}
-*/
