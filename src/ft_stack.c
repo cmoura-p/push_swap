@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:34:54 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/28 18:01:57 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/31 19:57:10 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,42 @@ int     stack_len(t_node *a)
 
 bool    stack_ordered(t_node *a)
 {
-    t_node  *temp;
-
-    temp = a;
-    while (temp->next != NULL)
+    while (a->next != NULL)
     {
-        if (temp->num > temp->next->num)
+        if (a->num > a->next->num)
             return(0);
-        temp = temp->next;
+        a = a->next;
     }
     return(1);
 }
+void    stack_init(t_node **a, char **argv)
+{
+    long    nbr;
+    t_node *aux;
+    t_node *new_node;
+
+    while (*argv)
+    {
+        nbr = ft_atol(*argv);
+        new_node = (t_node *) malloc(sizeof(t_node));
+        if (!new_node)
+            return;
+        new_node->num = (int)nbr;
+        new_node->next = NULL;
+        if (!*a)
+        {
+            *a = new_node;
+            aux = new_node;
+        }
+        else
+        {
+            aux->next = new_node;
+            aux = aux->next;
+        }
+        ++argv;
+    }
+}
+
 void	stack_freed(t_node **stack)
 {
 	t_node	*tmp;

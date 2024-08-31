@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:48 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/29 21:02:28 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/08/31 20:37:05 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	swap(t_node **head)
     if (*head == NULL || (*head)->next == NULL)
 		return ;
 	*head = (*head)->next;
-	(*head)->prev->prev = *head;
+	(*head)->prev->prev = *head;  // AQUI EH O MEU CALCANHAR DE AQUILES
 	(*head)->prev->next = (*head)->next;
 	if ((*head)->next)
 		(*head)->next->prev = (*head)->prev;

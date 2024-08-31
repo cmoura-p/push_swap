@@ -6,7 +6,7 @@
 #    By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:49:36 by cmoura-p          #+#    #+#              #
-#    Updated: 2024/08/29 18:22:41 by cmoura-p         ###   ########.fr        #
+#    Updated: 2024/08/31 20:09:00 by cmoura-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ OBJ_DIR		= obj/
 
 # Codigos Fonte
 
-SRCS				=	$(SRC_DIR)push_swap.c \
+SRCS				=	$(SRC_DIR)main.c \
+						$(SRC_DIR)push_swap.c \
 						$(SRC_DIR)ft_errors.c \
 						$(SRC_DIR)ft_stack.c \
 						$(SRC_DIR)ft_split.c\
