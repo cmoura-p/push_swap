@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/31 20:18:47 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/01 20:09:44 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	stack_freed(t_node **stack);
     Utils
 */
 char    **ft_split(char const *s, char c);
-t_node  add_node(t_node *a, int nbr);
+//t_node  add_node(t_node **node, int nbr);
 // t_node  find_last(t_node **a);
 
 #endif

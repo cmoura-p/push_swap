@@ -6,7 +6,7 @@
 #    By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:49:36 by cmoura-p          #+#    #+#              #
-#    Updated: 2024/08/31 20:09:00 by cmoura-p         ###   ########.fr        #
+#    Updated: 2024/09/01 19:57:35 by cmoura-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,11 @@ SRCS				=	$(SRC_DIR)main.c \
 						$(SRC_DIR)ft_errors.c \
 						$(SRC_DIR)ft_stack.c \
 						$(SRC_DIR)ft_split.c\
+						$(SRC_DIR)ft_utils.c \
 						$(SRC_DIR)op_swap.c
 #						$(SRC_DIR)short_sort.c \
 #						$(SRC_DIR)real_sort.c\
 #						$(SRC_DIR)op_push.c \
-#						$(SRC_DIR)ft_utils.c \
 #						$(SRC_DIR)op_rev_rotate.c \
 #						$(SRC_DIR)op_rotate.c \
 

@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:34:54 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/31 19:57:10 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/01 20:09:29 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,12 @@ void    stack_init(t_node **a, char **argv)
     while (*argv)
     {
         nbr = ft_atol(*argv);
-        new_node = (t_node *) malloc(sizeof(t_node));
+        new_node = ft_calloc(sizeof(*new_node), 1);
         if (!new_node)
             return;
         new_node->num = (int)nbr;
         new_node->next = NULL;
+        new_node->prev = NULL;
         if (!*a)
         {
             *a = new_node;
@@ -57,7 +58,8 @@ void    stack_init(t_node **a, char **argv)
         else
         {
             aux->next = new_node;
-            aux = aux->next;
+            new_node->prev = aux;
+            aux = new_node;
         }
         ++argv;
     }
