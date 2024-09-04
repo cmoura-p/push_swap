@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:41 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/29 19:35:33 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:16:47 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ static void	rotate(t_node **stack)
 
 	if (!*stack || !(*stack)->next)
 		return ;
-    t_node	*last_node;
-	*last_node = find_last(*stack);   //mais uma estrelinha
+	last_node = find_last(*stack);
 	last_node->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
@@ -34,14 +33,14 @@ static void	rotate(t_node **stack)
 void	ra(t_node **a, bool print)
 {
 	rotate(a);
-	if (!print)
+	if (print)
 		write(1, "ra\n", 3);
 }
 
 void	rb(t_node **b, bool print)
 {
 	rotate(b);
-	if (!print)
+	if (print)
 		write(1, "rb\n", 3);
 }
 
@@ -49,6 +48,6 @@ void	rr(t_node **a, t_node **b, bool print)
 {
 	rotate(a);
 	rotate(b);
-	if (!print)
+	if (print)
 		write(1, "rr\n", 3);
 }

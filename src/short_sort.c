@@ -6,14 +6,21 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:14:07 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/29 18:56:49 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/04 20:48:54 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    short_sort(t_node *a, t_node *b)
+void	short_sort(t_node **a)
 {
+	t_node	*biggest_node;
 
+	biggest_node = find_biggest(*a);
+	if (biggest_node == *a)
+		ra(a, true);
+	else if (biggest_node == (*a)->next)
+		rra(a, true);
+	if ((*a)->num > (*a)->next->num)
+		sa(a, true);
 }
-

@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:48 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/01 20:13:27 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/04 21:13:20 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,20 @@ void	sa(t_node **a, bool print);
 void	sb(t_node **b, bool print);
 void	ss(t_node **a, t_node **b, bool print);
 
-
-static void	swap(t_node **head)
+static void	swap(t_node **top_node)
 {
-    if (*head == NULL || (*head)->next == NULL)
+	if (*top_node == NULL || (*top_node)->next == NULL)
 		return ;
-	*head = (*head)->next;
-                                            //printf("%i\n", (*head)->num);
-	(*head)->prev->prev = *head;
-    (*head)->prev->next = (*head)->next;
-	if ((*head)->next)
-		(*head)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL;
+	*top_node = (*top_node)->next;
+	(*top_node)->prev->prev = *top_node;
+	(*top_node)->prev->next = (*top_node)->next;
+	if ((*top_node)->next)
+		(*top_node)->next->prev = (*top_node)->prev;
+	(*top_node)->next = (*top_node)->prev;
+	(*top_node)->prev = NULL;
 }
 
-void	sa(t_node	**a, bool print)
+void	sa(t_node **a, bool print)
 {
 	swap(a);
 	if (print)

@@ -6,27 +6,27 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/29 20:04:36 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/04 19:22:11 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	syntax_error(char *str) // ta' funcionando
+int	syntax_error(char *str)
 {
-	if (!(*str == '+' || *str == '-'
-		|| (*str >= '0' && *str <= '9')))
+	if (!(*str == '+' || *str == '-' || (*str >= '0' && *str <= '9')))
 		return (1);
 	if ((*str == '+' || *str == '-')
 		&& !(str[1] >= '0' && str[1] <= '9'))
-        return (1);
+		return (1);
 	return (0);
 }
 
 int	dupli_error(char **nbrs, int n, int pos)
 {
-    int i = 0;
+	int	i;
 
+	i = 0;
 	while (i < pos)
 	{
 		if (ft_atol(nbrs[i]) == n)
@@ -38,7 +38,9 @@ int	dupli_error(char **nbrs, int n, int pos)
 
 void	free_argv(char **a)
 {
-    int i = 0;
+	int	i;
+
+	i = 0;
 	while (a[i])
 	{
 		free(a[i]);
@@ -46,5 +48,3 @@ void	free_argv(char **a)
 	}
 	free(a);
 }
-
-

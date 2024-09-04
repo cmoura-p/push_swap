@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:33 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/06/29 19:33:34 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:16:35 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,29 @@ void	rrr(t_node **a, t_node **b, bool print);
 
 static void	rev_rotate(t_node **stack)
 {
-	t_node	*last;
+	t_node	*last_node;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	*last = find_last(*stack);
-	last->prev->next = NULL;
-	last->next = *stack;
-	last->prev = NULL;
-	*stack = last;
-	last->next->prev = last;
+	last_node = find_last(*stack);
+	last_node->prev->next = NULL;
+	last_node->next = *stack;
+	last_node->prev = NULL;
+	*stack = last_node;
+	last_node->next->prev = last_node;
 }
 
 void	rra(t_node **a, bool print)
 {
 	rev_rotate(a);
-	if (!print)
+	if (print)
 		write(1, "rra\n", 4);
 }
 
 void	rrb(t_node **b, bool print)
 {
 	rev_rotate(b);
-	if (!print)
+	if (print)
 		write(1, "rrb\n", 4);
 }
 
@@ -48,6 +48,6 @@ void	rrr(t_node **a, t_node **b, bool print)
 {
 	rev_rotate(a);
 	rev_rotate(b);
-	if (!print)
+	if (print)
 		write(1, "rrr\n", 4);
 }
