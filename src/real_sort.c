@@ -24,13 +24,13 @@
         (precisamos encontrar qual o elemento que menos custa mover)
         a formula eh a soma de:
         quantas operacoes para ter o elemento A no topo (da pilha A) +
-        quantas operacoes para ter o taget node de A no topo (da pilha B)
+        quantas operacoes para ter o target node de A no topo (da pilha B)
         (esse eh o push cost)
     8. quando encontrar o "cheapest" elemento de A faz o pb()
     daqui voltamos ao ponto 3. ate que tenhamos apenas 3 elementos na pilha A
 
-    9. com 3 elementos executamos o meu quick_sort que numa sequencia de ifs
-        coloca os 3 em ordem crescente
+    9. com 3 elementos executamos o meu short_sort que com apenas 2 movimentos
+       coloca os 3 em ordem crescente
 
     Agora vamos esvaziar a pilha B
         (o unico requisito para essa etapa eh ter certeza que
@@ -56,7 +56,19 @@
 
 #include "push_swap.h"
 
-void    real_sort(t_node *a, t_node *b)
+void    real_sort(t_node **a, t_node **b)
 {
+    int s_len;
+
+    s_len = stack_len(*a);
+	while (s_len-- > 3)
+		pb(b, a, false);
+	short_sort(a);
+    while (*b)
+    {
+        get_target(a, b);
+        find_cheapest(a, b);
+        do_move(b, a)
+    }
 
 }

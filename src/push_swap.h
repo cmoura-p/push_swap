@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/04 20:10:13 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/05 20:59:54 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack_node
 {
 	int			num;
 	int			pos;
+    bool        up_half;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }				t_node;
@@ -52,16 +53,18 @@ void	pb(t_node **b, t_node **a, bool print);
 
 //	Stack functions
 bool	stack_ordered(t_node *a);
-int	stack_len(t_node *a);
+int     stack_len(t_node *a);
 void	stack_init(t_node **a, char **argv);
 void	stack_freed(t_node **stack);
 
 //	Sorting functions
 void	short_sort(t_node **a);
+void    real_sort(t_node **a, t_node **b);
 
 //	Utils
 char	**ft_split(char const *s, char c);
 t_node	*find_last(t_node *a);
 t_node	*find_biggest(t_node *a);
+void	set_position(t_node *stack);
 
 #endif
