@@ -6,33 +6,33 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:23 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/04 18:14:40 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/07 19:49:31 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_node **d, t_node **s)
+static void	push(t_node **dest, t_node **src)
 {
 	t_node	*push_node;
 
-	if (!*s)
+	if (!*src)
 		return ;
-	push_node = *s;
-	*s = (*s)->next;
-	if (*s)
-		(*s)->prev = NULL;
+	push_node = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
 	push_node->prev = NULL;
-	if (!*d)
+	if (!*dest)
 	{
-		*d = push_node;
+		*dest = push_node;
 		push_node->next = NULL;
 	}
 	else
 	{
-		push_node->next = *d;
+		push_node->next = *dest;
 		push_node->next->prev = push_node;
-		*d = push_node;
+		*dest = push_node;
 	}
 }
 

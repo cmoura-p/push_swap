@@ -58,17 +58,19 @@
 
 void    real_sort(t_node **a, t_node **b)
 {
-    int s_len;
+    int size;
 
-    s_len = stack_len(*a);
-	while (s_len-- > 3)
-		pb(b, a, false);
-	short_sort(a);
-    while (*b)
+    size = stack_len(*a);
+	while (size > 3)
     {
-        get_target(a, b);
-        find_cheapest(a, b);
-        do_move(b, a)
+		pb(b, a, false);
+        size--;
     }
-
+	short_sort(a);
+    set_position(*b);
+    set_position(*a);
+    set_target(*a, *b);
+    set_price(*a, *b);
+    find_cheapest(*b);
 }
+

@@ -6,32 +6,32 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:34:54 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/04 21:19:25 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/07 20:32:30 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_len(t_node *a)
+int	stack_len(t_node *stack)
 {
 	int	i;
 
 	i = 1;
-	while (a->next != NULL)
+	while (stack->next != NULL)
 	{
 		i++;
-		a = a->next;
+		stack = stack->next;
 	}
 	return (i);
 }
 
-bool	stack_ordered(t_node *a)
+bool	stack_ordered(t_node *stack)
 {
-	while (a->next != NULL)
+	while (stack->next != NULL)
 	{
-		if (a->num > a->next->num)
+		if (stack->num > stack->next->num)
 			return (0);
-		a = a->next;
+		stack = stack->next;
 	}
 	return (1);
 }

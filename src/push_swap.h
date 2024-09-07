@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/05 20:59:54 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/07 20:51:04 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ typedef struct s_stack_node
 {
 	int			num;
 	int			pos;
-    bool        up_half;
+    int         price;
+    bool        first_half;
+    bool        cheapest;
+    struct s_stack_node *target;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }				t_node;
@@ -32,8 +35,8 @@ typedef struct s_stack_node
 void	push_swap(t_node **stack_a);
 
 //	Handle errors
-int	syntax_error(char *str);
-int	dupli_error(char **argv, int n, int pos);
+int     syntax_error(char *str);
+int     dupli_error(char **argv, int n, int pos);
 void	free_argv(char **a);
 
 //	Operations
@@ -46,10 +49,8 @@ void	rr(t_node **a, t_node **b, bool print);
 void	rra(t_node **a, bool print);
 void	rrb(t_node **b, bool print);
 void	rrr(t_node **a, t_node **b, bool print);
-/*
 void	pa(t_node **a, t_node **b, bool print);
 void	pb(t_node **b, t_node **a, bool print);
-*/
 
 //	Stack functions
 bool	stack_ordered(t_node *a);
@@ -63,8 +64,12 @@ void    real_sort(t_node **a, t_node **b);
 
 //	Utils
 char	**ft_split(char const *s, char c);
-t_node	*find_last(t_node *a);
-t_node	*find_biggest(t_node *a);
+t_node	*find_last(t_node *stack);
+t_node	*find_biggest(t_node *stack);
+t_node  *find_smallest(t_node *stack);
+void    find_cheapest(t_node *stack);
 void	set_position(t_node *stack);
+void	set_target(t_node *stack_a, t_node *stack_b);
+void    set_price(t_node *stack_a, t_node *stack_b);
 
 #endif
