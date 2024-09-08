@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/07 19:29:49 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:57:07 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	push_swap(t_node **stack_a)
 	{
 		if (stack_len(*stack_a) == 2)
 		{
-			sa(stack_a, true);
+			sa(stack_a);
 		}
 		else if (stack_len(*stack_a) == 3)
 		{

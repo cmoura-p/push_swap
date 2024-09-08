@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   op_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:33 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/04 13:16:35 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:54:53 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_node **a, bool print);
-void	rrb(t_node **b, bool print);
-void	rrr(t_node **a, t_node **b, bool print);
+void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
 
 static void	rev_rotate(t_node **stack)
 {
@@ -30,24 +30,21 @@ static void	rev_rotate(t_node **stack)
 	last_node->next->prev = last_node;
 }
 
-void	rra(t_node **a, bool print)
+void	rra(t_node **a)
 {
 	rev_rotate(a);
-	if (print)
-		write(1, "rra\n", 4);
+    write(1, "rra\n", 4);
 }
 
-void	rrb(t_node **b, bool print)
+void	rrb(t_node **b)
 {
 	rev_rotate(b);
-	if (print)
-		write(1, "rrb\n", 4);
+    write(1, "rrb\n", 4);
 }
 
-void	rrr(t_node **a, t_node **b, bool print)
+void	rrr(t_node **a, t_node **b)
 {
 	rev_rotate(a);
 	rev_rotate(b);
-	if (print)
-		write(1, "rrr\n", 4);
+    write(1, "rrr\n", 4);
 }

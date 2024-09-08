@@ -6,15 +6,15 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:48 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/04 21:13:20 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:56:57 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_node **a, bool print);
-void	sb(t_node **b, bool print);
-void	ss(t_node **a, t_node **b, bool print);
+void	sa(t_node **a);
+void	sb(t_node **b);
+void	ss(t_node **a, t_node **b);
 
 static void	swap(t_node **top_node)
 {
@@ -29,24 +29,21 @@ static void	swap(t_node **top_node)
 	(*top_node)->prev = NULL;
 }
 
-void	sa(t_node **a, bool print)
+void	sa(t_node **a)
 {
 	swap(a);
-	if (print)
-		write(1, "sa\n", 3);
+ 	write(1, "sa\n", 3);
 }
 
-void	sb(t_node **b, bool print)
+void	sb(t_node **b)
 {
 	swap(b);
-	if (print)
-		write(1, "sb\n", 3);
+    write(1, "sb\n", 3);
 }
 
-void	ss(t_node **a, t_node **b, bool print)
+void	ss(t_node **a, t_node **b)
 {
 	swap(a);
 	swap(b);
-	if (print)
-		write(1, "ss\n", 3);
+    write(1, "ss\n", 3);
 }

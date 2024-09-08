@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 19:19:13 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/07 22:18:45 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 14:25:29 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,3 @@ t_node	*find_smallest(t_node *stack)
 		smallest = stack->next->next;
 	return (smallest);
 }
-
-display *b->next

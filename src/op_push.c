@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:23 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/07 19:49:31 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:53:45 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ static void	push(t_node **dest, t_node **src)
 	}
 }
 
-void	pa(t_node **a, t_node **b, bool print)
+void	pa(t_node **a, t_node **b)
 {
 	push(a, b);
-	if (print)
-		write(1, "pa\n", 3);
+    write(1, "pa\n", 3);
 }
 
-void	pb(t_node **b, t_node **a, bool print)
+void	pb(t_node **b, t_node **a)
 {
 	push(b, a);
-	if (print)
-		write(1, "pb\n", 3);
+    write(1, "pb\n", 3);
 }

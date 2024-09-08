@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/07 21:22:41 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:50:29 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ void	set_position(t_node *stack)
 	int	i;
 	int	half_way;
 
-	i = 1;
+	i = 0;
 	if (!stack)
 		return ;
 	half_way = stack_len(stack) / 2;
 	while (stack)
 	{
 		stack->pos = i;
-		if (i <= half_way)
+		if (i < half_way)
 			stack->first_half = true;
 		else
 			stack->first_half = false;
 		stack = stack->next;
-		++i;
+		i++;
 	}
 }
 
@@ -45,7 +45,7 @@ void	set_target(t_node *stack_a, t_node *stack_b)
 		current_a = stack_a;
 		while (current_a)
 		{
-			if (stack_b->num < current_a->num 
+			if (stack_b->num < current_a->num
 				&& current_a->num < best_match)
 			{
 				best_match = current_a->num;
@@ -74,9 +74,9 @@ void    set_price(t_node *stack_a, t_node *stack_b)
 		if (!(stack_b->first_half))
 			stack_b->price = size_b - (stack_b->pos);
 		if (stack_b->target->first_half)
-			stack_b->price += stack_b->target->pos;
+			stack_b->price = stack_b->price + stack_b->target->pos;
 		else
-			stack_b->price += size_a - (stack_b->target->pos);
+			stack_b->price = stack_b->price + (size_a - (stack_b->target->pos));
 		stack_b = stack_b->next;
 	}
 }
@@ -102,18 +102,15 @@ void find_cheapest(t_node *stack)
 }
 
 /*
- *	Best match is..
- *   | "The Smallest-bigger value" |
- *
- *  if no node is Bigger, best_match is the Smallest node.
- *  TLDR
- *  With this function every node in b gets its target node in a
 
- * Set the prices to push the node
- * from b -> a
- * The price checks for the relative positions in the stack
- * for every node, setting the respective price
+display **a
+display *a->next
+display *a->next->next
+display **b
+display *b->next
+display *b->next->next
+display *b->next->next->next
+display *b->next->next->next->next
+display *b->next->next->next->next->next
 
- * Flag the cheapest node in the current
- * stacks configurations
 */

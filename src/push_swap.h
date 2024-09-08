@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/07 20:51:04 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:53:06 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ int     dupli_error(char **argv, int n, int pos);
 void	free_argv(char **a);
 
 //	Operations
-void	sa(t_node **a, bool print);
-void	sb(t_node **b, bool print);
-void	ss(t_node **a, t_node **b, bool print);
-void	ra(t_node **a, bool print);
-void	rb(t_node **b, bool print);
-void	rr(t_node **a, t_node **b, bool print);
-void	rra(t_node **a, bool print);
-void	rrb(t_node **b, bool print);
-void	rrr(t_node **a, t_node **b, bool print);
-void	pa(t_node **a, t_node **b, bool print);
-void	pb(t_node **b, t_node **a, bool print);
+void	sa(t_node **a);
+void	sb(t_node **b);
+void	ss(t_node **a, t_node **b);
+void	ra(t_node **a);
+void	rb(t_node **b);
+void	rr(t_node **a, t_node **b);
+void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
+void	pa(t_node **a, t_node **b);
+void	pb(t_node **b, t_node **a);
 
 //	Stack functions
 bool	stack_ordered(t_node *a);
