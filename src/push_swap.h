@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/08 20:53:06 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/09 21:03:38 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,19 @@ void	stack_freed(t_node **stack);
 //	Sorting functions
 void	short_sort(t_node **a);
 void    real_sort(t_node **a, t_node **b);
+void    change_positions(t_node **a, t_node **b);
+void    move_a(t_node **a, t_node *a_target);
+void    move_b(t_node **b, t_node *cheapest_b);
 
 //	Utils
 char	**ft_split(char const *s, char c);
 t_node	*find_last(t_node *stack);
 t_node	*find_biggest(t_node *stack);
 t_node  *find_smallest(t_node *stack);
+t_node  *get_cheapest(t_node *stack);
+t_node  *get_target(t_node *stack, t_node *a_target);
+
+// Settings
 void    find_cheapest(t_node *stack);
 void	set_position(t_node *stack);
 void	set_target(t_node *stack_a, t_node *stack_b);

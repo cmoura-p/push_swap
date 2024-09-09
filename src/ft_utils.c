@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 19:19:13 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/08 14:25:29 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/09 21:00:14 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,28 @@ t_node	*find_smallest(t_node *stack)
 	if (smallest->num > stack->next->next->num)
 		smallest = stack->next->next;
 	return (smallest);
+}
+t_node  *get_cheapest(t_node *stack)
+{
+    if (stack == NULL)
+        return (NULL);
+    while (stack)
+    {
+        if (stack->cheapest)
+            return (stack);
+        stack = stack->next;
+    }
+    return (NULL);
+}
+t_node  *get_target(t_node *stack, t_node *a_target)
+{
+    if (stack == NULL)
+        return (NULL);
+    while (stack)
+    {
+        if (stack == a_target)
+            return (stack);
+        stack = stack->next;
+    }
+    return (NULL);
 }
