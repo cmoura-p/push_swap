@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:33 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/08 20:54:53 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:38:03 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ static void	rev_rotate(t_node **stack)
 void	rra(t_node **a)
 {
 	rev_rotate(a);
-    write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_node **b)
 {
 	rev_rotate(b);
-    write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_node **a, t_node **b)
 {
 	rev_rotate(a);
 	rev_rotate(b);
-    write(1, "rrr\n", 4);
+	write(1, "rrr\n", 4);
 }

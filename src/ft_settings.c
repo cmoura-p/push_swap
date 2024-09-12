@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_settings.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/08 20:50:29 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/12 19:03:31 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	set_target(t_node *stack_a, t_node *stack_b)
 {
 	t_node	*current_a;
 	t_node	*target_node;
-	long			best_match;
+	long	best_match;
 
 	while (stack_b)
 	{
@@ -59,9 +59,9 @@ void	set_target(t_node *stack_a, t_node *stack_b)
 			stack_b->target = target_node;
 		stack_b = stack_b->next;
 	}
-
 }
-void    set_price(t_node *stack_a, t_node *stack_b)
+
+void	set_price(t_node *stack_a, t_node *stack_b)
 {
 	int	size_a;
 	int	size_b;
@@ -80,10 +80,11 @@ void    set_price(t_node *stack_a, t_node *stack_b)
 		stack_b = stack_b->next;
 	}
 }
-void find_cheapest(t_node *stack)
+
+void	find_cheapest(t_node *stack)
 {
-	long    best_value;
-	t_node  *best_match;
+	long	best_value;
+	t_node	*best_match;
 
 	if (stack == NULL)
 		return ;
@@ -98,19 +99,4 @@ void find_cheapest(t_node *stack)
 		stack = stack->next;
 	}
 	best_match->cheapest = true;
-
 }
-
-/*
-
-display **a
-display *a->next
-display *a->next->next
-display **b
-display *b->next
-display *b->next->next
-display *b->next->next->next
-display *b->next->next->next->next
-display *b->next->next->next->next->next
-
-*/

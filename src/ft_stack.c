@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:34:54 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/08 16:25:35 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:52:14 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	stack_len(t_node *stack)
 	int	i;
 
 	i = 1;
+	if (!stack)
+		return (0);
 	while (stack->next != NULL)
 	{
 		i++;
@@ -27,6 +29,8 @@ int	stack_len(t_node *stack)
 
 bool	stack_ordered(t_node *stack)
 {
+	if (!stack)
+		return (1);
 	while (stack->next != NULL)
 	{
 		if (stack->num > stack->next->num)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 19:19:13 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/09 21:00:14 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/12 19:08:35 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,35 +37,34 @@ t_node	*find_biggest(t_node *stack)
 t_node	*find_smallest(t_node *stack)
 {
 	t_node	*smallest;
+	long	min;
 
+	min = LONG_MAX;
 	smallest = stack;
-	if (smallest->num > stack->next->num)
-		smallest = stack->next;
-	if (smallest->num > stack->next->next->num)
-		smallest = stack->next->next;
+	while (stack)
+	{
+		if (stack->num < min)
+		{
+			min = stack->num;
+			smallest = stack;
+		}
+		stack = stack->next;
+	}
 	return (smallest);
 }
-t_node  *get_cheapest(t_node *stack)
+
+t_node	*get_cheapest(t_node *stack)
 {
-    if (stack == NULL)
-        return (NULL);
-    while (stack)
-    {
-        if (stack->cheapest)
-            return (stack);
-        stack = stack->next;
-    }
-    return (NULL);
-}
-t_node  *get_target(t_node *stack, t_node *a_target)
-{
-    if (stack == NULL)
-        return (NULL);
-    while (stack)
-    {
-        if (stack == a_target)
-            return (stack);
-        stack = stack->next;
-    }
-    return (NULL);
+	t_node	*chea_node;
+
+	if (stack == NULL)
+		return (NULL);
+	chea_node = stack;
+	while (chea_node)
+	{
+		if (chea_node->cheapest)
+			return (chea_node);
+		chea_node = chea_node->next;
+	}
+	return (NULL);
 }

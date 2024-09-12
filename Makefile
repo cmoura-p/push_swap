@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+         #
+#    By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:49:36 by cmoura-p          #+#    #+#              #
-#    Updated: 2024/09/07 19:35:47 by cmoura-p         ###   ########.fr        #
+#    Updated: 2024/09/11 16:23:03 by cmoura-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS	=	$(SRC_DIR)main.c \
 		$(SRC_DIR)ft_split.c\
 		$(SRC_DIR)ft_utils.c \
 		$(SRC_DIR)ft_settings.c \
+		$(SRC_DIR)ft_rotation.c \
 		$(SRC_DIR)op_swap.c \
 		$(SRC_DIR)op_push.c \
 		$(SRC_DIR)op_rev_rotate.c \

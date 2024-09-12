@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/04 21:05:34 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/12 19:35:47 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int	main(int argc, char **argv)
 
 static bool	check_input(int ac, char **av)
 {
-	int		i;
 	long	nbr;
+	int		i;
 
 	nbr = 0;
 	i = 0;
@@ -59,7 +59,8 @@ static bool	check_input(int ac, char **av)
 			return (false);
 		}
 		nbr = ft_atol(av[i]);
-		if ((nbr > INT_MAX || nbr < INT_MIN) || (dupli_error(av, nbr, i)))
+		if ((nbr > INT_MAX || nbr < INT_MIN)
+			|| (dupli_error(av, nbr, i)))
 		{
 			if (ac == 2)
 				free_argv(av);

@@ -6,13 +6,13 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:13:09 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/08/29 20:03:20 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/12 19:44:39 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t ft_segm_count(char const *s, char c)
+static size_t	ft_segm_count(char const *s, char c)
 {
 	int	count;
 
@@ -52,31 +52,33 @@ static char	**freelist(char **str, int i)
 	return (NULL);
 }
 
-static char *ft_get_segm(const char *s, char c, size_t j)
+static char	*ft_get_segm(const char *s, char c, size_t j)
 {
-	char 	*substr;
+	char	*substr;
 	int		i;
 
 	i = 0;
-    substr = (char *) ft_calloc((ft_segm_size(&s[j], c) + 1), sizeof(char));
+	substr = (char *) ft_calloc((ft_segm_size(&s[j], c) + 1), sizeof(char));
 	if (!substr)
 		return (NULL);
-    while(s[j] && s[j] != c)
+	while (s[j] && s[j] != c)
 	{
 		substr[i] = s[j];
 		i++;
 		j++;
 	}
-	return(substr);
+	return (substr);
 }
+
 char	**ft_split(const char *s, char c)
 {
-	char		**lista;
-	size_t		i;
-	size_t		j;
-    if (s == NULL)
-        return(NULL);
-    lista = (char **) ft_calloc((ft_segm_count(s, c) + 1), sizeof(char *));
+	char	**lista;
+	size_t	i;
+	size_t	j;
+
+	if (s == NULL)
+		return (NULL);
+	lista = (char **) ft_calloc((ft_segm_count(s, c) + 1), sizeof(char *));
 	if (!lista || !s)
 		return (NULL);
 	i = 0;
@@ -86,12 +88,12 @@ char	**ft_split(const char *s, char c)
 		if (s[i] != c)
 		{
 			lista[j] = ft_get_segm(s, c, i);
-            if (!lista[j])
-            {
-                freelist(lista, j-1);
-                return (NULL);
-            }
-            j++;
+			if (!lista[j])
+			{
+				freelist(lista, j - 1);
+				return (NULL);
+			}
+			j++;
 			i += ft_segm_size(&s[i], c);
 		}
 		else
@@ -100,4 +102,3 @@ char	**ft_split(const char *s, char c)
 	lista[j] = 0;
 	return (lista);
 }
-
