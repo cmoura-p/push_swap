@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 19:37:42 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/12 19:14:52 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:44:04 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	syntax_error(char *str) // ta' funcionando
+int	syntax_error(char *str)
 {
 	while (*str)
 	{
@@ -44,15 +44,18 @@ int	dupli_error(char **nbrs, int n, int pos)
 	return (0);
 }
 
-void	free_argv(char **a)
+void	free_argv(char **a, int ac)
 {
 	int	i;
 
 	i = 0;
-	while (a[i])
+	if (ac == 2)
 	{
-		free(a[i]);
-		i++;
+		while (a[i])
+		{
+			free(a[i]);
+			i++;
+		}
+		free(a);
 	}
-	free(a);
 }

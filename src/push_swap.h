@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 17:10:45 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/09/12 19:50:41 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:20:15 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	push_swap(t_node **stack_a);
 //	Handle errors
 int		syntax_error(char *str);
 int		dupli_error(char **argv, int n, int pos);
-void	free_argv(char **a);
+void	free_argv(char **a, int ac);
 
 //	Operations
 void	sa(t_node **a);
